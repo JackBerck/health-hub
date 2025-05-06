@@ -1,4 +1,10 @@
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Beranda | HealthHub",
+  description: "HealthHub is a health information system.",
+};
 
 export default function Home() {
   return (

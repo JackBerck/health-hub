@@ -3,8 +3,8 @@
 @theme {
   --color-dark-base: oklch(13% 0.028 261.692);
   --color-light-base: oklch(98.5% 0.002 247.839);
-  --color-blue-imphnen-base: oklch(0.69 0.1366 239.38);
-  --color-blue-imphnen-secondary: oklch(0.77 0.1027 235.43);
+  --color-blue-healthhub-base: oklch(0.69 0.1366 239.38);
+  --color-blue-healthhub-secondary: oklch(0.77 0.1027 235.43);
   --color-blue-base: oklch(54.6% 0.245 262.881);
   --color-blue-secondary: oklch(70.7% 0.165 254.624);
   --color-blue-tertiary: oklch(88.2% 0.059 254.128);
@@ -73,6 +73,10 @@
 }
 
 @layer components {
+  .container {
+    @apply mx-auto;
+  }
+
   .section-padding-x {
     @apply px-6 sm:px-8 md:px-12 xl:px-20;
   }

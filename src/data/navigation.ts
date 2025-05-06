@@ -1,6 +1,7 @@
 import type { NavigationLink } from "@/types/global";
+import { pb } from "@/lib/pb";
 
-const navigation: NavigationLink[] = [
+const baseNavigation: NavigationLink[] = [
   {
     title: "Homepage",
     url: "/",
@@ -19,4 +20,36 @@ const navigation: NavigationLink[] = [
   },
 ];
 
-export default navigation;
+// Pastikan selalu mengembalikan array
+export function getNavigation(): NavigationLink[] {
+  try {
+    const isAuthenticated = pb.authStore.isValid;
+    
+    return [
+      ...baseNavigation,
+      ...(isAuthenticated
+        ? [
+            {
+              title: "Dashboard",
+              url: "/dashboard",
+            },
+          ]
+        : [
+            {
+              title: "Login",
+              url: "/login",
+            },
+            {
+              title: "Register",
+              url: "/register",
+            },
+          ]),
+    ];
+  } catch (error) {
+    console.error("Error getting navigation:", error);
+    // Fallback ke base navigation jika terjadi error
+    return [...baseNavigation];
+  }
+}
+
+// Tidak perlu export default lagi karena kita selalu memanggil getNavigation()
