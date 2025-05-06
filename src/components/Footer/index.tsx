@@ -29,7 +29,9 @@ function GroupFooterLink({
 }
 
 export default function Footer() {
-  const [navigationLinks, setNavigationLinks] = useState<Array<any>>([]); // Definisikan tipe dengan jelas
+  const [navigationLinks, setNavigationLinks] = useState<
+    Array<{ title: string; url: string }>
+  >([]); // Definisikan tipe dengan jelas
 
   // Fungsi untuk memperbarui navigasi dengan penanganan error
   const updateNavigation = () => {

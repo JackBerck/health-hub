@@ -9,8 +9,11 @@ import { pb } from "@/lib/pb";
 export default function NavigationBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [navigationLinks, setNavigationLinks] = useState<Array<any>>([]); // Definisikan tipe dengan jelas
+  const [navigationLinks, setNavigationLinks] = useState<
+    Array<{ title: string; url: string }>
+  >([]); // Definisikan tipe dengan jelas
 
+  console.log(navigationLinks);
   // Fungsi untuk memperbarui navigasi dengan penanganan error
   const updateNavigation = () => {
     try {
