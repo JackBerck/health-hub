@@ -18,7 +18,7 @@ function GroupFooterLink({
       <ul className="flex flex-col gap-1">
         {links.map((link, index) => (
           <li key={index}>
-            <a href={link.url} className="footer-link">
+            <a href={link.url} className="small-font-size footer-link">
               {link.title}
             </a>
           </li>

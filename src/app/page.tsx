@@ -1,109 +1,54 @@
-import Image from "next/image";
 import type { Metadata } from "next";
+// import DashboardHeader from "@/components/Homepage/Header";
+import MoodTracker from "@/components/Dashboard/MoodTracker";
+import RecommendedGames from "@/components/Dashboard/RecommendedGames";
+import CommunityHighlights from "@/components/Dashboard/CommunityHighlights";
+import ProgressInsights from "@/components/Dashboard/ProgressInsights";
+import AIChatCompanion from "@/components/Dashboard/AIChatCompanion";
+import DailyTip from "@/components/Dashboard/DailyTip";
+import UpcomingActivities from "@/components/Dashboard/UpcomingActivities";
+import ManageAccount from "@/components/Dashboard/ManageAccount";
 
 export const metadata: Metadata = {
-  title: "Beranda | HealthHub",
-  description: "HealthHub is a health information system.",
+  title: "Beranda | HealthHub Connect",
+  description:
+    "Platform Integratif untuk Kesehatan Mental Melalui Gamifikasi dan Dukungan Komunitas",
 };
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="min-h-screen text-dark-base pt-24 pb-16 bg-gradient-to-br from-blue-50 to-purple-50 section-padding-x">
+      {/* <DashboardHeader /> */}
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <div className="container max-w-screen-xl">
+        <h1 className="font-bold mb-2 lg:mb-4">
+          Selamat Datang di{" "}
+          <span className="bg-gradient-to-r from-teal-500 to-indigo-600 bg-clip-text text-transparent">
+            HealthHub Connect
+          </span>
+        </h1>
+
+        {/* Main Dashboard Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6">
+          {/* Left Column - 1/3 width on large screens */}
+          <div className="lg:col-span-1 space-y-6">
+            <MoodTracker />
+            <AIChatCompanion />
+            <DailyTip />
+            <ManageAccount />
+          </div>
+
+          {/* Middle and Right Columns - 2/3 width on large screens */}
+          <div className="lg:col-span-2 space-y-6">
+            <ProgressInsights />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <RecommendedGames />
+              <UpcomingActivities />
+            </div>
+            <CommunityHighlights />
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+    </main>
   );
 }
